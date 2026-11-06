@@ -1,0 +1,21 @@
+.weather-control{position:fixed;z-index:45;top:max(22px,env(safe-area-inset-top));right:max(26px,env(safe-area-inset-right));font-family:inherit;color:#e5ece2;}
+.weather-control button{font:inherit;color:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.weather-trigger{display:flex;align-items:center;gap:10px;min-height:44px;padding:10px 13px;border:1px solid #e5ece22b;border-radius:24px;background:#18342976;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 5px 24px #0e241d12;transition:background .25s,border-color .25s;}
+.weather-trigger:hover,.weather-control.is-open .weather-trigger{background:#244337c7;border-color:#e5ece24a;}
+.weather-control svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round;flex:none;}
+.weather-trigger-label{font-size:11px;letter-spacing:.11em;}
+.weather-chevron{font-size:15px;line-height:1;opacity:.55;transform:translateY(-2px);transition:transform .2s;}
+.weather-control.is-open .weather-chevron{transform:rotate(180deg) translateY(-1px);}
+.weather-options{position:absolute;top:calc(100% + 10px);right:0;width:204px;padding:16px 10px 10px;border:1px solid #d7e4d928;border-radius:19px;background:#1e382fe8;backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);box-shadow:0 12px 42px #061c2336;animation:weather-reveal .2s ease-out;}
+.weather-options[hidden]{display:none;}
+.weather-caption{display:block;padding:0 9px 11px;font-size:9px;letter-spacing:.14em;text-transform:uppercase;opacity:.52;}
+.weather-options button{display:flex;align-items:center;gap:12px;width:100%;min-height:43px;padding:10px;border:0;border-radius:11px;background:transparent;text-align:left;font-size:12px;transition:background .2s;}
+.weather-options button:hover{background:#d7e4d910;}
+.weather-options button[aria-pressed=true]{background:#d7e4d913;}
+.weather-options button i{margin-left:auto;width:4px;height:4px;border-radius:50%;background:currentColor;opacity:0;}
+.weather-options button[aria-pressed=true] i{opacity:.72;}
+.weather-control button:focus-visible{outline:2px solid #d6e3c7;outline-offset:4px;}
+.weather-control[data-weather=rain] .weather-trigger{background:#203641a8;}
+@keyframes weather-reveal{from{opacity:0;transform:translateY(-5px);}to{opacity:1;transform:translateY(0);}}
+@media(max-width:700px){.weather-control{top:max(15px,env(safe-area-inset-top));right:max(16px,env(safe-area-inset-right));}.weather-trigger{gap:7px;padding:9px 11px;}.weather-trigger-label{display:none;}.weather-options{width:190px;}}
+@media(prefers-reduced-motion:reduce){.weather-control *{animation:none!important;transition:none!important;}}

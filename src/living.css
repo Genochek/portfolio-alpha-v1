@@ -1,0 +1,59 @@
+body{font-family:GardenUI,sans-serif;font-weight:400;background:#173d30}
+.atmosphere{background:linear-gradient(180deg,#173f2512,transparent 26%,transparent 75%,#122c2928),radial-gradient(ellipse at 48% 42%,transparent 48%,#0d34251a)}
+.artist-title h1{color:#c7a9f1;text-shadow:0 0 25px #b697ec66}
+.artist-sheet{--sheet-compact:126px;transform:translate(-50%,calc(100% - var(--sheet-compact) - var(--lift)));background:linear-gradient(125deg,#faf0d8f5,#dce8c9ed);border-radius:45% 35% 0 0/10px 8px 0 0;transition:transform .66s cubic-bezier(.32,0,.15,1),opacity .6s;box-shadow:0 -12px 70px #233d2c50}
+.artist-sheet:after{content:'';position:absolute;left:-32px;top:-57px;width:220px;height:100px;background:url('../assets/botanical-trim.svg') left bottom/contain no-repeat;pointer-events:none;opacity:.63;filter:drop-shadow(2px 5px 4px #183f3030)}
+.sheet-summary{height:var(--sheet-compact);padding:19px 35px;gap:3px 20px;z-index:1}
+.sheet-name{font:600 33px/1 GardenHand,cursive;letter-spacing:.1px;color:#674f83}
+.sheet-copy{font:500 21px/1.12 GardenHand,cursive;color:#36533d;max-width:455px;text-wrap:pretty}
+.sheet-detail{height:calc(100% - var(--sheet-compact))}
+.artist-mat{position:relative;padding:13px;border:1px solid #76815b60;border-radius:7px;background:linear-gradient(140deg,#fff9e8,#e0e5cb);box-shadow:inset 0 0 0 3px #f9f1d9,inset 0 0 0 4px #80906c45,0 7px 18px #294a2920}
+.artist-mat:before,.artist-mat:after{content:'';position:absolute;pointer-events:none;border-radius:3px}
+.artist-mat:before{inset:7px;border:1px solid #83906b65}
+.artist-mat:after{inset:11px;border:1px solid #fff9e6a6;box-shadow:0 0 0 1px #526e4b38}
+.artist-mat .meme{border-radius:2px;box-shadow:0 1px 5px #29442e38}
+.transitioning .artist-sheet{transform:translate(-50%,calc(100% + 85px))!important;pointer-events:none}
+.journey-controls{bottom:calc(145px + 6vh)}
+.info-journey{height:calc(100svh + 670px);position:relative;max-width:none;margin:0;padding:0;background:none}
+#info{scroll-behavior:auto}
+.info-stage{height:100svh;position:sticky;top:0;isolation:isolate;overflow:hidden}
+.info-stage:before{content:'';position:absolute;inset:0;background:#59422b url('../assets/earth-section.svg') center/100% 100% no-repeat;opacity:clamp(0,calc(var(--dive)*2.5),1);pointer-events:none}
+.mode-info #world{opacity:clamp(0,calc(1 - var(--info-dive,0)*2.5),1)}
+.info-block{position:absolute;inset:auto;left:var(--info-world-x,9vw);top:var(--info-world-y,24vh);width:min(450px,82vw);min-height:0;max-width:450px;padding:0;justify-content:flex-start;opacity:clamp(0,calc(1 - var(--dive)*2.3),1);transform:scale(var(--info-world-scale,1));transform-origin:0 0;filter:blur(calc(var(--dive)*5px));transition:none;background:none}
+.info-block h2{font-family:GardenDisplay,Georgia,serif;font-size:clamp(42px,4.3vw,65px);text-shadow:0 2px 15px #14342980}
+.info-block p{font-size:19px;line-height:1.9;max-width:470px;text-shadow:0 2px 12px #15382999}
+.info-ending{position:absolute;inset:0;min-height:0;max-width:none;padding:90px 12% 65px;display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,360px);gap:50px;align-content:center;align-items:center;border:0;opacity:clamp(0,calc((var(--dive) - .38)*1.85),1);transform:none;background:linear-gradient(90deg,#21190f62,#43322516);pointer-events:none}
+.info-ending:not([inert]){pointer-events:auto}
+.info-ending p{font:500 clamp(30px,3vw,44px)/1.4 GardenHand,cursive;text-shadow:0 2px 15px #19180a}
+.root-cradle{position:relative;padding:0;width:100%;aspect-ratio:620/480;display:grid;place-items:center;filter:drop-shadow(0 0 15px #e5d9ad20)}
+.root-cradle:before{content:'';position:absolute;left:0;bottom:calc(100% - 1px);width:100%;height:100svh;background:url('../assets/root-curtain.svg') center/100% 100% no-repeat;pointer-events:none}
+.root-cradle:after{content:'';position:absolute;inset:0;background:url('../assets/root-cradle.svg') center/100% 100% no-repeat;pointer-events:none}
+.info-ending .root-cradle .meme{width:72%;height:auto!important;aspect-ratio:16/9;object-fit:contain;background:#fdfcf7;border-radius:35% 15% 24% 18%/13% 9% 18% 8%;box-shadow:0 12px 20px #211a1555;align-self:center}
+.mode-info .atmosphere{background:linear-gradient(90deg,#0e312c25,transparent 76%)}
+.portfolio-content{padding-top:105px;background:linear-gradient(90deg,#0c302ace,#123a2b8a 64%,#163b2917);max-width:1150px}
+.portfolio-content h2{font-family:GardenDisplay,Georgia,serif;font-size:clamp(56px,5vw,78px);color:#f3e8cf;margin-bottom:36px}
+.work-name{font-size:clamp(14px,1.2vw,18px);font-weight:450}.work-row{background:#153b3029;padding-top:22px;padding-bottom:22px}.work-row.current{background:linear-gradient(90deg,#b8a1d943,#7b8c8020 65%,transparent);color:#f9efdc}
+.portfolio-player{width:min(1040px,calc(100% - 76px));gap:20px;padding:22px 27px;background:linear-gradient(110deg,#f7ecd8f5,#dce6c9f2 62%,#d3dfbdf0);border-radius:29px 13px 23px 12px/10px 23px 12px 25px;box-shadow:0 15px 55px #082b2490,inset 0 1px #fff9e0}
+.portfolio-player:before,.portfolio-player:after{content:'';position:absolute;width:220px;height:100px;background:url('../assets/botanical-trim.svg') left bottom/contain no-repeat;pointer-events:none;opacity:.55;filter:drop-shadow(2px 4px 4px #24472c44)}
+.portfolio-player:before{left:-41px;top:-58px}.portfolio-player:after{right:-33px;bottom:-20px;transform:rotate(180deg);opacity:.3}
+.transport,.playing-info,.inline-sound{position:relative;z-index:1}
+.transport #track-play{background:radial-gradient(circle at 35% 25%,#567c52,#294d3b);box-shadow:0 4px 12px #31583a33,inset 0 1px #9cb084;color:#fff4d5}
+.transport button{min-width:38px;min-height:44px}#playing-title{font-size:12px;font-weight:500}.timeline input{accent-color:#766187}
+.sound-dock.inline-sound{position:relative;inset:auto;flex-direction:row;width:auto;padding:0;gap:3px;background:none;backdrop-filter:none;border-radius:0;color:#3d5941;opacity:1;z-index:2}
+.inline-sound button{color:#3d5941;min-width:32px;min-height:40px}
+.sound-dock.inline-sound #master-volume{writing-mode:horizontal-tb;direction:ltr;width:78px;height:24px;accent-color:#657b4e}
+.inline-sound .speed-menu{top:auto;bottom:calc(100% + 25px);right:0;background:#214936f5}
+.inline-sound .speed-menu button{color:#f0ebd5}
+@media(max-width:700px){
+ .artist-sheet{--sheet-compact:145px;width:calc(100% - 32px)}.sheet-summary{padding:18px 22px}.sheet-name{font-size:30px}.sheet-copy{font-size:20px}.sheet-detail{padding:0 16px 15px}.artist-sheet:after{left:-17px;width:160px;top:-44px;height:80px}.journey-controls{bottom:calc(158px + 5vh)}
+ .info-journey{height:calc(100svh + 530px)}.info-block{max-width:82vw;padding:0}.info-block h2{font-size:clamp(34px,10.2vw,46px)}.info-block p{max-width:100%;font-size:17px;line-height:1.85}.info-ending{padding:85px 9% 45px;grid-template-columns:1fr;gap:10px}.info-ending p{font-size:31px;margin:0}.root-cradle{max-width:300px;justify-self:center}
+ .portfolio-content{padding:95px 24px 215px}.portfolio-content h2{font-size:60px}.portfolio-player{left:15px;transform:none;width:calc(100% - 30px);padding:20px 18px 16px;gap:10px;flex-wrap:wrap;bottom:15px}.playing-info{min-width:100px}.transport button{min-width:31px}.transport #track-play{width:39px;height:39px}.sound-dock.inline-sound{margin-left:auto;height:30px;flex-basis:100%;justify-content:flex-end}.inline-sound .speed-menu{bottom:calc(100% + 10px)}.sound-dock.inline-sound #master-volume{width:110px}.inline-sound button{min-height:30px}.portfolio-player:before{left:-18px;width:155px;top:-46px}.portfolio-player:after{width:140px;right:-12px}
+}
+@media(max-height:520px) and (orientation:landscape){.artist-sheet{--sheet-compact:90px}.sheet-summary{padding:10px 23px}.sheet-name{font-size:26px}.sheet-copy{font-size:17px}.journey-controls{bottom:110px}.info-block{padding:0}.info-block h2{font-size:34px;margin-bottom:14px}.info-block p{font-size:15px;line-height:1.6;max-width:100%}.info-ending{padding:65px 10% 20px;grid-template-columns:1fr 240px}.info-ending p{font-size:29px}.portfolio-player{padding:13px 20px}.portfolio-content{padding-top:85px}}
+@media(prefers-reduced-motion:reduce){.artist-sheet,.view,.portfolio-player{transition:none!important}.view.entering{animation:none}.info-block{filter:none}.leaf-handle svg{transition:none}}
+
+/* A local, feathered shade keeps the world-anchored biography legible. */
+.mode-info .atmosphere{background:linear-gradient(90deg,#10202a26,transparent 65%)}
+.info-block{isolation:isolate;color:#fff6e2}.info-block:before{content:'';position:absolute;inset:-65px -75px -65px -65px;background:radial-gradient(ellipse at 40% 50%,#16212c45 0%,#16212c24 36%,#16212c0a 62%,transparent 78%);filter:blur(23px);z-index:-1;pointer-events:none}.info-block h2{font-size:clamp(38px,4.3vw,65px);text-shadow:0 2px 12px #111d2855}.info-block p{text-shadow:0 2px 8px #111d2870}
+
+.info-block #info-links{margin-top:22px}.info-block #info-links a{font-size:14px;color:#eee8da}

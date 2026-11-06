@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#202c22"><meta name="description" content="G3nochek, emore, tripliehalo — музыка и живой ботанический мир Владислава Макаровского.">
+  <title>G3nochek — ботаника звука</title>
+  <link rel="icon" href="./assets/leaf.svg" type="image/svg+xml"><link rel="stylesheet" href="./src/styles.css"><link rel="stylesheet" href="./src/living.css"><link rel="stylesheet" href="./src/weather.css">
+</head>
+<body>
+  <div id="world" aria-hidden="true"></div><div class="atmosphere" aria-hidden="true"></div>
+  <div class="menu-shade" aria-hidden="true"></div>
+  <header class="site-header">
+    <button class="nav-star" aria-label="Открыть меню" aria-expanded="false" aria-controls="main-menu"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="m16 2 2.1 8.9 7.8-4.8-4.8 7.8L30 16l-8.9 2.1 4.8 7.8-7.8-4.8L16 30l-2.1-8.9-7.8 4.8 4.8-7.8L2 16l8.9-2.1-4.8-7.8 7.8 4.8Z"/></svg></button>
+    <button class="nav-peek" aria-label="Раскрыть навигацию" aria-expanded="false" aria-controls="main-menu"><span></span></button>
+    <div class="nav-canopy" id="main-menu" inert><nav aria-label="Основная навигация"><button data-view="artists" aria-current="page">artists</button><button data-view="info">info</button><button data-view="portfolio">portfolio</button></nav></div>
+  </header>
+  <main>
+    <section id="artists" class="view active" aria-label="Артисты">
+      <div class="artist-title" aria-live="polite"><h1>G3nochek</h1><svg class="root-lines" viewBox="0 0 580 75" aria-hidden="true"><path d="M55 0c0 25 22 19 15 43m-8-24c-17 1-19 16-33 17M190 0c-3 33 16 23 8 60m-1-30c17 0 23 10 33 12M390 0c-4 18-22 24-12 47m5-25c-18 0-27 13-30 23M511 0c-8 26 10 38-7 63"/></svg></div>
+      <div class="journey-controls"><button class="side-arrow previous" aria-label="Предыдущий артист"><svg viewBox="0 0 32 64"><path d="M16 3v54M4 45l12 12 12-12"/></svg></button><button class="side-arrow next" aria-label="Следующий артист"><svg viewBox="0 0 40 100"><path d="M20 94V8M5 24 20 8l15 16"/></svg></button></div>
+      <aside class="artist-sheet" aria-label="Об артисте">
+        <button class="leaf-handle" aria-label="Раскрыть информацию об артисте" aria-expanded="false" aria-controls="sheet-detail"><svg viewBox="0 0 80 64"><path class="leaf-fill" d="M39 51C12 49 10 21 17 7c30 1 44 16 22 44Z"/><path d="M40 57C35 35 29 24 18 10m17 28-15-6m10-5 1-11"/><path class="leaf-fill second" d="M41 45c-2-19 13-27 29-25-1 20-13 29-29 25Z"/><path d="m40 48 25-24"/></svg></button>
+        <button class="sheet-summary" aria-expanded="false" aria-controls="sheet-detail"><span class="sheet-name">G3nochek</span><span class="sheet-copy">мейн карта далбаеба</span><span class="summary-plus" aria-hidden="true">+</span></button>
+        <div id="sheet-detail" class="sheet-detail" inert><div class="artist-mat"><video id="artist-art" poster="./assets/memes/mita-tank.jpg" class="meme" src="./assets/memes/mita-tank.mp4" width="400" height="400" muted loop playsinline preload="metadata" aria-label="Мита на танке — мем с Tenor"></video></div><div class="detail-bottom"><div class="artist-links"></div></div></div>
+      </aside>
+    </section>
+    <section id="info" class="view scroll-view" aria-label="Информация" hidden><div class="info-journey"><div class="info-stage"><article class="info-block"><h2>Макаровский<br><i>Владислав</i></h2><p>далбаебе карч, кручу звучки</p><div id="info-links"></div></article><article class="info-ending" inert><p>а ваще как бы лол, зачем ты эт читаешь??</p><div class="root-cradle"><video poster="./assets/memes/monika-peek.jpg" class="meme" src="./assets/memes/monika-peek.mp4" width="498" height="280" muted loop playsinline preload="metadata" aria-label="Моника выглядывает из-за края — мем с Tenor"></video></div></article></div></div></section>
+    <section id="portfolio" class="view scroll-view" aria-label="Работы" hidden><div class="portfolio-content"><h2>Работы</h2><div id="works"></div></div>
+      <div class="portfolio-player" aria-label="Управление текущей работой"><div class="transport"><button id="track-prev" aria-label="Предыдущая работа">↤</button><button id="track-play" aria-label="Воспроизвести">▶</button><button id="track-next" aria-label="Следующая работа">↦</button></div><div class="playing-info"><span id="playing-title"></span><div class="timeline"><span id="elapsed">0:00</span><input id="track-seek" type="range" min="0" max="100" value="0" step=".1" aria-label="Перемотка текущей работы" disabled><span id="duration">0:00</span></div></div><p id="player-error" role="status" hidden></p></div>
+    </section>
+  </main>
+  <aside class="sound-dock" aria-label="Общие настройки звука" hidden><button class="speed-toggle" aria-label="Настройка скорости" aria-expanded="false" aria-controls="speed-menu">•••</button><div id="speed-menu" class="speed-menu" hidden><button data-rate="0.8" aria-pressed="false">slow</button><button data-rate="1" aria-pressed="true">normal</button><button data-rate="1.2" aria-pressed="false">speed</button></div><input id="master-volume" type="range" min="0" max="1" step=".01" value=".7" aria-label="Общая громкость"><button id="mute" aria-label="Выключить звук" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4Zm13-1c3 2 3 6 0 8m3-11c5 4 5 10 0 14"/></svg></button></aside>
+  <aside id="floating-video" class="floating-video" aria-label="Видео текущей работы" hidden><button aria-label="Закрыть видео">×</button><div></div></aside>
+  <p id="scene-status" class="scene-status" role="status" hidden>Упрощённый режим: 3D недоступно. Музыка и навигация работают.</p>
+  <script type="module" src="./src/app.js"></script>
+</body></html>
+
+
